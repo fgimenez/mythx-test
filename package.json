@@ -1,0 +1,24 @@
+{
+  "name": "mythx-test",
+  "version": "0.1.0",
+  "description": "",
+  "bin": {
+    "mythx-test": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fgimenez/mythx-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fgimenez/mythx-test/issues"
+  },
+  "homepage": "https://github.com/fgimenez/mythx-test#readme",
+  "dependencies": {
+    "armlet": "^1.1.0"
+  }
+}

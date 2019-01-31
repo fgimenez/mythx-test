@@ -1,0 +1,24 @@
+version: 2
+
+jobs:
+  deploy:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:8.11
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Publish package
+          command: npm publish --userconfig=.npmrc-auth
+
+workflows:
+  version: 2
+  test-deploy:
+    jobs:
+      - deploy:
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
