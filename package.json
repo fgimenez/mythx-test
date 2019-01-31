@@ -1,6 +1,6 @@
 {
   "name": "mythx-test",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "bin": {
     "mythx-test": "index.js"

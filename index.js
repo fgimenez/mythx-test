@@ -1,5 +1,10 @@
 #!/usr/bin/env node
 
+if (!process.env.MYTHX_ETH_ADDRESS || !process.env.MYTHX_PASSWORD) {
+  console.log('Please export your MythX credentials as environment variables MYTHX_ETH_ADDRESS and MYTHX_PASSWORD. You can sign up in https://mythx.io.')
+  process.exit(1)
+}
+
 const armlet = require('armlet')
 const fs = require('fs')
 
@@ -27,7 +32,7 @@ function request(data) {
   console.log('Sending request to MythX...')
 
   const auth = { ethAddress: process.env.MYTHX_ETH_ADDRESS, password: process.env.MYTHX_PASSWORD }
-  const url = process.env.MYTHX_API_URL || 'https://staging.api.mythx.io'
+  const url = process.env.MYTHX_API_URL || 'https://api.mythx.io'
 
   const client = new armlet.Client(auth, url)
 
